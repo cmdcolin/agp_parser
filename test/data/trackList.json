@@ -5,11 +5,13 @@
             "type": "CanvasFeatures",
             "label": "AGP",
             "style": {
-                "color": "function(feat) { console.log(feat); return 'red'; }"
+                "color": "{AGP_color}",
+                "height": "{AGP_height}"
             },
             "urlTemplate": "bt_ref_Bos_taurus_UMD_3.1.1_{refseq}.agp",
             "displayMode": "collapsed"
         }
     ],
-    "plugins": ["AGPParser"]
+    "plugins": ["AGPParser"],
+    "include": ["functions.conf"]
 }
