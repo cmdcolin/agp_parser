@@ -157,8 +157,6 @@ function(
 
         _featureData: function( data ) {
             var f = lang.mixin( {}, data );
-            delete f.child_features;
-            delete f.derived_features;
             delete f.attributes;
             f.start -= 1; // convert to interbase
             for ( var a in data.attributes ) {
