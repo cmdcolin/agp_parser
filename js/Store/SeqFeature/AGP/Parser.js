@@ -10,7 +10,7 @@ function(
     lang,
     AGP
 ) {
-
+    var id = 0;
     return declare( null, {
 
         constructor: function( args ) {
@@ -33,8 +33,10 @@ function(
                 this._buffer_feature( f );
             }
             else if (( match = /^\s*(\#+)(.*)/.exec( line ) )) {
+                // na directive
             }
             else if ( /^\s*$/.test( line ) ) {
+                // na blank line
             }
             else {
                 line = line.replace( /\r?\n?$/g, '' );
@@ -66,7 +68,8 @@ function(
         container_attributes: { Parent: 'child_features', Derives_from: 'derived_features' },
 
         _buffer_feature: function( feature_line ) {
-            console.log(feature_line);
+            feature_line.ID = id++;
+            this._return_item([feature_line]);
         }
     });
 });

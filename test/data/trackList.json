@@ -5,10 +5,10 @@
             "type": "CanvasFeatures",
             "label": "AGP",
             "style": {
-                "color": "red"
+                "color": "function(feat) { console.log(feat); return 'red'; }"
             },
-            "urlTemplate": "bt_ref_Bos_taurus_UMD_3.1.1_chr1.agp",
-            "displayMode": "collapse"
+            "urlTemplate": "bt_ref_Bos_taurus_UMD_3.1.1_{refseq}.agp",
+            "displayMode": "collapsed"
         }
     ],
     "plugins": ["AGPParser"]

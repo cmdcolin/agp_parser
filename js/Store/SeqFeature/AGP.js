@@ -76,7 +76,7 @@ function(
                     try {
                         parser.addLine(line);
                     } catch (e) {
-                        fail('Error parsing GFF3.');
+                        fail('Error parsing AGP.');
                         throw e;
                     }
                 },
@@ -149,7 +149,7 @@ function(
         _formatFeature: function( data ) {
             var f = new SimpleFeature({
                 data: this._featureData( data ),
-                id: (data.attributes.ID || [])[0]
+                id: (data.ID || [])[0]
             });
             f._reg_seq_id = this.browser.regularizeReferenceName( data.seq_id );
             return f;
@@ -157,11 +157,7 @@ function(
 
         _featureData: function( data ) {
             var f = lang.mixin( {}, data );
-            delete f.attributes;
             f.start -= 1; // convert to interbase
-            for ( var a in data.attributes ) {
-                f[ a.toLowerCase() ] = data.attributes[a].join(',');
-            }
             return f;
         },
 
