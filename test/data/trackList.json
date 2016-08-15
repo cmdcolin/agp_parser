@@ -13,5 +13,7 @@
         }
     ],
     "plugins": ["AGPParser"],
-    "include": ["functions.conf"]
+    "include": ["functions.conf"],
+    "highResolutionMode": 2,
+    "classicMenu": true
 }
